@@ -92,7 +92,15 @@ int to_int(char *tab)
     int size = strlen(tab);
     int value=0;
     for(int i=0;i<size-1;i++){
-        value+=tab[i];
+        int pow = 1;
+       if(i != 0)
+       {
+            for(int j = 1; j<=i ; j++)
+            {
+                pow = pow * 10;
+            }
+       }
+    value += (int)(((tab[size-1-i])-48)*pow);
     }
     return value;
 }
